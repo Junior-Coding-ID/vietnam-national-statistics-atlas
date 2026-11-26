@@ -7,7 +7,7 @@
 // MAKEFUN_OUTPUT, or /output); it never writes to the repository or cwd.
 // Run outside the grader with:  mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildDossier } from "./vendor/makefun-frontend.ts";
@@ -20,8 +20,13 @@ const outDir =
 
 // Start from a clean output directory so a second run writes byte-identical
 // bytes to the first (the grader runs the program twice and compares).
-rmSync(outDir, { recursive: true, force: true });
+// The output directory itself is NEVER removed: in the grader it is a
+// bind-mount, and removing a mount point throws EBUSY ("Device or resource
+// busy"). Only its contents are cleared, entry by entry.
 mkdirSync(outDir, { recursive: true });
+for (const name of readdirSync(outDir)) {
+  rmSync(join(outDir, name), { recursive: true, force: true });
+}
 
 // The site: plain static files under app/.
 cpSync(join(repoRoot, "app"), join(outDir, "app"), { recursive: true });
