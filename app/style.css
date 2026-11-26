@@ -1,0 +1,137 @@
+/* VIETPULSE — Viet Nam National Statistics Atlas. System font stack only,
+   no web fonts, no external requests. Palette: Deep Jade / Mekong Green /
+   Rice Paper / dark gold (WCAG-safe on light) / Terracotta. */
+:root {
+  --jade: #102D2B; --green: #167D70; --green-soft: #2E9B8C; --paper: #F5F3E9;
+  --paper-2: #EFEAD8; --gold: #9A6B16; --gold-soft: #F2C14E; --terra: #B85440;
+  --terra-soft: #C96A4E; --ink: #22302E; --mute: #5A6B66; --line: #DDD8C4;
+  --card: #FFFFFF; --focus: #0B6E63;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px; line-height: 1.55;
+}
+body, p, li, td, th { font-variant-numeric: tabular-nums; }
+h1, h2, h3, .kpi-value, .stat-big { font-family: "Helvetica Neue", Arial, system-ui, sans-serif; }
+a { color: var(--green); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* ---------- header ---------- */
+.masthead { background: var(--jade); color: #F5F3E9; padding: 0 0 0; }
+.masthead-inner { max-width: 1180px; margin: 0 auto; padding: 26px 20px 18px; }
+.brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.brand-mark { font-family: "Helvetica Neue", Arial, sans-serif; font-weight: 800; letter-spacing: .14em; font-size: 30px; color: #fff; }
+.brand-mark em { font-style: normal; color: var(--gold-soft); }
+.brand-sub { font-size: 15px; color: #C9D6CE; }
+.edition { margin-left: auto; text-align: right; font-size: 13px; color: #C9D6CE; line-height: 1.4; }
+.edition strong { color: #fff; font-size: 14px; }
+nav.main { background: #0B2422; }
+nav.main ul { max-width: 1180px; margin: 0 auto; padding: 0 20px; list-style: none; display: flex; flex-wrap: wrap; gap: 2px; }
+nav.main a { display: block; padding: 11px 16px; color: #D8E4DE; text-decoration: none; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-weight: 600; border-bottom: 3px solid transparent; }
+nav.main a:hover { color: #fff; background: #123B37; }
+nav.main a[aria-current="page"] { color: #fff; border-bottom-color: var(--gold-soft); background: #123B37; }
+
+/* ---------- layout ---------- */
+.wrap { max-width: 1180px; margin: 0 auto; padding: 22px 20px 40px; }
+.page-head { margin: 6px 0 18px; }
+.page-head h1 { font-size: 34px; line-height: 1.15; margin: 0 0 8px; color: var(--jade); }
+.lede { font-size: 18px; color: #33423F; max-width: 860px; margin: 0; }
+section.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; margin: 0 0 20px; }
+section.card h2 { font-size: 23px; margin: 0 0 4px; color: var(--jade); }
+section.card h2 .vtag { font-size: 13px; color: var(--gold); letter-spacing: .08em; }
+.card .sub { color: var(--mute); font-size: 15px; margin: 0 0 14px; }
+.src-line { font-size: 13.5px; color: var(--mute); margin: 12px 0 0; border-top: 1px solid var(--line); padding-top: 10px; }
+.chart-svg, .map-svg { width: 100%; height: auto; display: block; }
+.map-tile { cursor: pointer; }
+.map-tile:hover rect, .map-tile:focus rect { stroke: var(--jade); stroke-width: 3; }
+.map-wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: start; }
+.map-legend { font-size: 15px; }
+.map-legend .sw { display: inline-block; width: 16px; height: 16px; border-radius: 3px; vertical-align: -3px; margin-right: 6px; }
+.map-legend li { margin: 6px 0; }
+
+/* ---------- source toggle ---------- */
+.toggle-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 16px; }
+.toggle-row .lbl { font-family: "Helvetica Neue", Arial, sans-serif; font-weight: 700; font-size: 15px; color: var(--jade); }
+.seg { display: inline-flex; border: 2px solid var(--jade); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: #fff; color: var(--jade); font: 700 14px "Helvetica Neue", Arial, sans-serif; padding: 9px 16px; cursor: pointer; }
+.seg button.active { background: var(--jade); color: #fff; }
+#source-label { font-size: 14px; color: var(--mute); }
+
+/* ---------- KPI cards ---------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 14px; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--green); border-radius: 10px; padding: 16px 18px 14px; }
+.kpi-label { margin: 0 0 6px; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; font-weight: 700; color: var(--mute); text-transform: uppercase; letter-spacing: .05em; }
+.kpi-value { margin: 0; font-size: 34px; font-weight: 800; line-height: 1.1; color: var(--jade); }
+.kpi-note { margin: 8px 0 0; font-size: 13.5px; color: var(--mute); }
+.unemp-strip { background: #EAF3F0; border: 1px solid #BFDCD3; border-radius: 8px; padding: 12px 16px; font-size: 15.5px; margin: 0 0 20px; }
+
+/* ---------- callouts ---------- */
+.callout { border-left: 5px solid var(--terra); background: #FBEEE9; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 0 0 20px; font-size: 15.5px; }
+.callout.gold { border-left-color: var(--gold); background: #F8F1DC; }
+.callout.green { border-left-color: var(--green); background: #EAF3F0; }
+.callout p { margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.two-col > section.card { margin-bottom: 0; }
+
+/* ---------- tables ---------- */
+.table-tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 0 0 14px; }
+.table-tools input[type="search"], .table-tools select { font: 15px "Helvetica Neue", Arial, sans-serif; padding: 9px 12px; border: 1.5px solid #B9C4BC; border-radius: 8px; background: #fff; color: var(--ink); }
+.table-tools input[type="search"] { flex: 1 1 220px; }
+.table-tools label { font: 700 14px "Helvetica Neue", Arial, sans-serif; color: var(--jade); }
+.table-scroll { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.data th, table.data td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+table.data th { background: var(--jade); color: #fff; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 13.5px; position: sticky; top: 0; }
+table.data td.r, table.data th.r { text-align: right; }
+table.data td.strong { font-weight: 700; }
+table.data tbody tr:nth-child(even) { background: #FAF8EF; }
+table.data tr.flash { background: #FBEEC3 !important; }
+.vi { color: var(--mute); font-size: 13px; }
+.tag { display: inline-block; font: 700 12px "Helvetica Neue", Arial, sans-serif; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+.tag.merged { background: #F6E3DB; color: #8A3B28; }
+.tag.unchanged { background: #DFF0EC; color: #0E5A50; }
+.tag.city { background: #F8F1DC; color: var(--gold); }
+#prov-count { font-size: 14px; color: var(--mute); margin: 10px 0 0; }
+
+/* ---------- buttons / downloads ---------- */
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+button.btn, a.btn { display: inline-block; border: 2px solid var(--jade); background: var(--jade); color: #fff; font: 700 15px "Helvetica Neue", Arial, sans-serif; padding: 10px 18px; border-radius: 8px; cursor: pointer; text-decoration: none; }
+button.btn.ghost, a.btn.ghost { background: #fff; color: var(--jade); }
+button.btn:hover, a.btn:hover { background: #0B2422; }
+button.btn.ghost:hover, a.btn.ghost:hover { background: var(--paper-2); }
+
+/* ---------- sources page ---------- */
+.source-card { border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 0 0 12px; background: #fff; }
+.source-card h3 { margin: 0 0 6px; font-size: 18px; color: var(--jade); }
+.source-card p { margin: 4px 0; font-size: 15px; }
+.src-note { color: var(--mute); font-size: 14px; }
+ol.method li { margin: 8px 0; }
+
+/* ---------- tooltip ---------- */
+#tooltip { display: none; position: fixed; z-index: 50; max-width: 320px; background: var(--jade); color: #fff; font: 14px/1.45 "Helvetica Neue", Arial, sans-serif; padding: 9px 12px; border-radius: 8px; pointer-events: none; box-shadow: 0 4px 18px rgba(0,0,0,.35); }
+
+/* ---------- footer ---------- */
+footer.site { background: var(--jade); color: #C9D6CE; }
+footer.site .wrap { padding-top: 24px; padding-bottom: 28px; font-size: 14.5px; }
+footer.site strong { color: #fff; }
+footer.site a { color: var(--gold-soft); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .map-wrap, .two-col { grid-template-columns: 1fr; }
+  .page-head h1 { font-size: 28px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .kpi-value { font-size: 30px; }
+  .brand-mark { font-size: 25px; }
+  .edition { margin-left: 0; text-align: left; }
+  nav.main a { padding: 10px 11px; font-size: 14px; }
+  section.card { padding: 16px; }
+  .wrap { padding: 16px 14px 30px; }
+}

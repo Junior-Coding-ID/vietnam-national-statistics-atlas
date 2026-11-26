@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>People — VIETPULSE · Viet Nam National Statistics Atlas 2025</title>
+<meta name="description" content="Viet Nam's people in 2025: population, fertility below replacement, and the unemployment gap between the NSO survey and the ILO model.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="people">
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">VIET<em>PULSE</em></span>
+      <span class="brand-sub">Viet Nam National Statistics Atlas</span>
+      <span class="edition"><strong>2025 Annual Edition</strong><br>National Statistics Office of Viet Nam · World Bank WDI<br>Updated 26 November 2026</span>
+    </div>
+  </div>
+  <nav class="main" aria-label="Main navigation">
+    <ul>
+      <li><a href="./index.html">Overview</a></li>
+      <li><a href="./economy.html">Economy</a></li>
+      <li><a href="./regions.html">Regions</a></li>
+      <li><a href="./people.html" aria-current="page">People</a></li>
+      <li><a href="./sources.html">Data &amp; Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>People</h1>
+    <p class="lede">102.3 million residents on NSO's count — and a demographic turn: fertility has fallen below replacement level, the median age is 33.4, and the working-age population is ageing. Two different unemployment counts tell two different stories, and both are shown here.</p>
+  </div>
+
+  <div class="kpi-grid" id="people-tiles" aria-live="polite"></div>
+
+  <section class="card" aria-labelledby="v7-title">
+    <h2 id="v7-title"><span class="vtag">V7 ·</span> The fertility inflection</h2>
+    <p class="sub">Population keeps growing (bars) while the total fertility rate falls (line). The UN estimate for 2025 is 1.88 births per woman; NSO's civil registration records 1.66 — shown as a red diamond, because the two count different things.</p>
+    <div id="chart-v7"></div>
+    <p class="src-line">Source: UN World Population Prospects 2024 (medium variant) for population and TFR; NSO civil registration (CRVS, 12 Nov 2026) for the 1.66 point. Only years the UN publishes are plotted — 2016–2019 are omitted rather than interpolated.</p>
+  </section>
+
+  <section class="card" aria-labelledby="v8-title">
+    <h2 id="v8-title"><span class="vtag">V8 ·</span> One labour market, two unemployment rates</h2>
+    <p class="sub">NSO's survey counts working-age unemployment at 2.22% (urban 2.51%, rural 2.02%). The ILO-modelled rate is 1.52%. The gap is definition, not error: NSO surveys people of working age in Viet Nam; the ILO model estimates total unemployment on an internationally comparable basis. Youth unemployment (15–24) is 6.2% on the ILO model — four times the headline rate.</p>
+    <div id="chart-v8"></div>
+    <p class="src-line">Source: NSO labour force survey 2025; ILO modelled estimates via World Bank WDI (SL.UEM.TOTL.ZS) and ILOSTAT, 2025. Quote the definition with the number.</p>
+  </section>
+
+  <section class="card" aria-labelledby="pop-title">
+    <h2 id="pop-title">Population &amp; fertility table</h2>
+    <p class="sub">UN World Population Prospects 2024 (medium variant). TFR is births per woman; urban share is the share of the population living in urban areas.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th class="r">Year</th><th class="r">Population, m</th><th class="r">TFR</th><th class="r">Median age</th><th class="r">Urban share</th></tr></thead>
+        <tbody id="pop-rows"></tbody>
+      </table>
+    </div>
+    <p class="src-line">Note: NSO's own 2025 population is 102.3 million (average 2025, +0.99% YoY), against the UN's 101.6 million — the headline KPI on the Overview uses NSO. NSO's 2025 TFR from civil registration is 1.66, against the UN's 1.88 shown here.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>VIETPULSE — Viet Nam National Statistics Atlas, 2025 Annual Edition.</strong> An independent atlas built from public official statistics. It is not affiliated with the National Statistics Office of Viet Nam, the World Bank, or the United Nations.</p>
+    <p>Sources: NSO (nso.gov.vn) · World Bank WDI · UN World Population Prospects 2024 · Resolution 202/2025/QH15. See <a href="./sources.html">Data &amp; Sources</a> for the full list and method notes. Figures marked (p) are preliminary and may be revised.</p>
+  </div>
+</footer>
+
+<script src="./data.js"></script>
+<script src="./charts.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

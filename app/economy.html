@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Economy — VIETPULSE · Viet Nam National Statistics Atlas 2025</title>
+<meta name="description" content="Viet Nam's economy in 2025: merchandise trade, realised FDI, the fastest-growing industries, and the national indicators table 2015–2025.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="economy">
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">VIET<em>PULSE</em></span>
+      <span class="brand-sub">Viet Nam National Statistics Atlas</span>
+      <span class="edition"><strong>2025 Annual Edition</strong><br>National Statistics Office of Viet Nam · World Bank WDI<br>Updated 26 November 2026</span>
+    </div>
+  </div>
+  <nav class="main" aria-label="Main navigation">
+    <ul>
+      <li><a href="./index.html">Overview</a></li>
+      <li><a href="./economy.html" aria-current="page">Economy</a></li>
+      <li><a href="./regions.html">Regions</a></li>
+      <li><a href="./people.html">People</a></li>
+      <li><a href="./sources.html">Data &amp; Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Economy</h1>
+    <p class="lede">An export-led year: merchandise exports of $475.04bn against imports of $455.01bn, a goods surplus of $20.03bn, and realised foreign investment at a five-year high. All 2025 trade figures are preliminary NSO releases.</p>
+  </div>
+
+  <section class="card" aria-labelledby="v2-title">
+    <h2 id="v2-title"><span class="vtag">V2 ·</span> Trade &amp; investment, 2025</h2>
+    <p class="sub">Merchandise trade is F.O.B. for exports and C.I.F. for imports. The services balance ran a deficit of $10.23bn, so the combined goods-and-services balance is roughly +$9.8bn.</p>
+    <div id="chart-v2"></div>
+    <p class="src-line">Source: NSO, 2025 preliminary. Realised FDI $27.62bn, +9.0% year on year — the highest in five years. Hover or tap a bar for the exact value.</p>
+  </section>
+
+  <section class="card" aria-labelledby="v6-title">
+    <h2 id="v6-title"><span class="vtag">V6 ·</span> What drove growth in 2025</h2>
+    <p class="sub">Value-added growth of the fastest-growing industries NSO published a 2025 rate for. Whole-economy real GDP grew 8.02% — these three sectors all beat it.</p>
+    <div id="chart-v6"></div>
+    <p class="src-line">Source: NSO, 2025. Only sub-sectors with a published 2025 growth rate are charted; no figure on this page is estimated or filled in from another year.</p>
+  </section>
+
+  <section class="card" aria-labelledby="nat-title">
+    <h2 id="nat-title">National indicators, 2015–2025</h2>
+    <p class="sub">One row per year, one source per column. GDP growth and CPI are NSO headline figures; GDP nominal is World Bank WDI; population and fertility are UN World Population Prospects 2024.</p>
+    <div class="btn-row">
+      <button type="button" class="btn" data-export="national-csv">Download CSV</button>
+      <button type="button" class="btn ghost" data-export="national-json">Download JSON</button>
+    </div>
+    <div class="table-scroll" style="margin-top:14px">
+      <table class="data">
+        <thead><tr><th class="r">Year</th><th class="r">Real GDP growth %</th><th class="r">CPI inflation %</th><th class="r">GDP, $bn</th><th class="r">GDP per capita, $</th><th class="r">Population, m</th><th class="r">TFR</th></tr></thead>
+        <tbody id="national-rows"></tbody>
+      </table>
+    </div>
+    <p class="src-line">Notes: 2022 GDP growth first published as 8.02%, later revised to 8.12% (shown revised). 2025 growth is preliminary. GDP per capita = WDI GDP ÷ UN WPP population. TFR is the UN estimate; NSO civil registration records 1.66 for 2025 — see <a href="./people.html">People</a>.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>VIETPULSE — Viet Nam National Statistics Atlas, 2025 Annual Edition.</strong> An independent atlas built from public official statistics. It is not affiliated with the National Statistics Office of Viet Nam, the World Bank, or the United Nations.</p>
+    <p>Sources: NSO (nso.gov.vn) · World Bank WDI · UN World Population Prospects 2024 · Resolution 202/2025/QH15. See <a href="./sources.html">Data &amp; Sources</a> for the full list and method notes. Figures marked (p) are preliminary and may be revised.</p>
+  </div>
+</footer>
+
+<script src="./data.js"></script>
+<script src="./charts.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

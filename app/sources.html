@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Data &amp; Sources — VIETPULSE · Viet Nam National Statistics Atlas 2025</title>
+<meta name="description" content="Every source behind VIETPULSE, the method notes, the reconciliation of the 34-province total, and the full dataset download.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="sources">
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">VIET<em>PULSE</em></span>
+      <span class="brand-sub">Viet Nam National Statistics Atlas</span>
+      <span class="edition"><strong>2025 Annual Edition</strong><br>National Statistics Office of Viet Nam · World Bank WDI<br>Updated 26 November 2026</span>
+    </div>
+  </div>
+  <nav class="main" aria-label="Main navigation">
+    <ul>
+      <li><a href="./index.html">Overview</a></li>
+      <li><a href="./economy.html">Economy</a></li>
+      <li><a href="./regions.html">Regions</a></li>
+      <li><a href="./people.html">People</a></li>
+      <li><a href="./sources.html" aria-current="page">Data &amp; Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Data &amp; Sources</h1>
+    <p class="lede">Every figure on this site names its source and its year. Two series are carried throughout and never mixed without saying so: NSO (the National Statistics Office of Viet Nam) as the headline, and the World Bank's WDI as the switchable alternative.</p>
+  </div>
+
+  <section class="card" aria-labelledby="srcs-title">
+    <h2 id="srcs-title">Sources</h2>
+    <div id="source-list"></div>
+  </section>
+
+  <section class="card" aria-labelledby="method-title">
+    <h2 id="method-title">Method notes</h2>
+    <ol class="method">
+      <li><strong>Two series, labelled.</strong> NSO is the headline series on the Overview (GDP $514.0bn, GDP per capita $5,026, population 102.3m). The World Bank WDI series ($514.7bn, $5,066, 101.6m) is one switch away. Charts name their series in their source line.</li>
+      <li><strong>No estimates of our own.</strong> A figure appears only if a named source publishes it. Where a source publishes only some years (population 2016–2019), the chart leaves gaps instead of interpolating. Where a sub-sector has no published 2025 growth rate, it is not charted.</li>
+      <li><strong>Preliminary 2025.</strong> NSO's 2025 growth, trade and FDI figures are preliminary estimates as published in January 2026 and may be revised. They are marked (p) where they appear.</li>
+      <li><strong>GDP per capita.</strong> The World Bank series is WDI GDP (NY.GDP.MKTP.CD) divided by UN World Population Prospects 2024 population, computed the same way for every year — which is why it differs slightly from other tables that mix vintages.</li>
+      <li><strong>Unemployment.</strong> NSO's 2.22% is the working-age survey rate; the ILO's 1.52% is a modelled estimate on an internationally comparable definition. Neither is "the" unemployment rate — quote the definition with the number.</li>
+      <li><strong>Fertility.</strong> The UN estimate (1.88 for 2025) and NSO civil registration (1.66) count different things and are shown side by side, not averaged.</li>
+      <li><strong>Institutional name.</strong> The statistics office was the General Statistics Office (GSO) until 1 March 2025, when it became the National Statistics Office of Viet Nam (NSO). Older citations that say GSO refer to the same office.</li>
+    </ol>
+  </section>
+
+  <section class="card" aria-labelledby="recon-title">
+    <h2 id="recon-title">Reconciliation: the 34-province total</h2>
+    <p id="recon-full"></p>
+    <p>The atlas therefore never presents a "total population" built by adding the provincial table, and the provincial table always carries the banner above it. If you need one national population figure, use NSO's 102.3 million (resident) or the UN's 101.6 million (estimate) — both are on the Overview.</p>
+  </section>
+
+  <section class="card" aria-labelledby="dl-title">
+    <h2 id="dl-title">Download the data</h2>
+    <p class="sub">Everything behind this atlas, as CSV or JSON, generated in your browser from the site's own data file — no account, no network request.</p>
+    <div class="btn-row">
+      <button type="button" class="btn" data-export="national-csv">National table 2015–2025 (CSV)</button>
+      <button type="button" class="btn ghost" data-export="provinces-csv">Provinces 2025 (CSV)</button>
+      <button type="button" class="btn ghost" data-export="all-json">Full dataset (JSON)</button>
+    </div>
+    <p class="src-line">Licence: the data are public official statistics; cite the source named with each figure. This site's own text, design and code are original work under the MIT licence (see LICENSE in the repository).</p>
+  </section>
+
+  <section class="card" aria-labelledby="about-title">
+    <h2 id="about-title">About this atlas</h2>
+    <p>VIETPULSE is an independent atlas built for readers who need Viet Nam's official statistics in one place, with the sources and the caveats attached to the numbers instead of buried. It runs entirely from its own files: open it on a desktop or a phone, with or without a network connection, and every chart, table, search box and download works. It was built as an entry for make.fun's "best national statistics site" competition (2025 Annual Edition).</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>VIETPULSE — Viet Nam National Statistics Atlas, 2025 Annual Edition.</strong> An independent atlas built from public official statistics. It is not affiliated with the National Statistics Office of Viet Nam, the World Bank, or the United Nations.</p>
+    <p>Sources: NSO (nso.gov.vn) · World Bank WDI · UN World Population Prospects 2024 · Resolution 202/2025/QH15. Figures marked (p) are preliminary and may be revised.</p>
+  </div>
+</footer>
+
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

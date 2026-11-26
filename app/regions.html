@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Regions — VIETPULSE · Viet Nam National Statistics Atlas 2025</title>
+<meta name="description" content="Viet Nam's 34 provinces and cities after the 2025 reorganisation: a tile map, the top 10 by population, and the full provincial table.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="regions">
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">VIET<em>PULSE</em></span>
+      <span class="brand-sub">Viet Nam National Statistics Atlas</span>
+      <span class="edition"><strong>2025 Annual Edition</strong><br>National Statistics Office of Viet Nam · World Bank WDI<br>Updated 26 November 2026</span>
+    </div>
+  </div>
+  <nav class="main" aria-label="Main navigation">
+    <ul>
+      <li><a href="./index.html">Overview</a></li>
+      <li><a href="./economy.html">Economy</a></li>
+      <li><a href="./regions.html" aria-current="page">Regions</a></li>
+      <li><a href="./people.html">People</a></li>
+      <li><a href="./sources.html">Data &amp; Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Regions — from 63 to 34</h1>
+    <p class="lede">On 1 July 2025 Resolution 202/2025/QH15 cut Viet Nam's provincial-level units from 63 to 34: 28 provinces and 6 centrally governed cities. Twenty-three of the 34 are new mergers; 11 kept their old borders. Tap any tile to jump to its row in the table.</p>
+  </div>
+
+  <div class="callout" role="note"><p id="recon-banner"></p></div>
+
+  <section class="card" aria-labelledby="v3-title">
+    <h2 id="v3-title"><span class="vtag">V3 ·</span> The new map — tile cartogram</h2>
+    <p class="sub">A schematic cartogram: each tile is one province or city, placed roughly where it sits on the map (north at the top). It is not a geographic map — tile size is equal so small dense provinces stay readable.</p>
+    <div class="map-wrap">
+      <div id="map-holder"></div>
+      <div class="map-legend">
+        <ul style="list-style:none;padding:0;margin:0">
+          <li><span class="sw" style="background:#C96A4E"></span><strong>Merged in 2025</strong> — 23 units formed from 52 former provinces and cities.</li>
+          <li><span class="sw" style="background:#167D70"></span><strong>Unchanged</strong> — 11 units kept their borders: Hanoi, Huế, Lai Châu, Điện Biên, Sơn La, Lạng Sơn, Quảng Ninh, Thanh Hóa, Nghệ An, Hà Tĩnh, Cao Bằng.</li>
+          <li><span class="sw" style="background:#F2C14E;border:1px solid #102D2B"></span><strong>Gold dot</strong> — centrally governed city (6: Hanoi, Ho Chi Minh City, Haiphong, Da Nang, Huế, Cần Thơ).</li>
+        </ul>
+        <p style="margin-top:14px">The biggest new unit is Lâm Đồng (24,233 km², from Lâm Đồng + Đắk Nông + Bình Thuận). The smallest is Hưng Yên (2,515 km²). The most populous is Ho Chi Minh City at 14.00 million; the least is Lai Châu at 0.51 million.</p>
+      </div>
+    </div>
+    <p class="src-line">Source: Resolution 202/2025/QH15 (National Assembly, 12 June 2025; effective 1 July 2025). Populations are the resolution's administrative-registration figures — see the reconciliation note at the top of this page.</p>
+  </section>
+
+  <section class="card" aria-labelledby="v4-title">
+    <h2 id="v4-title"><span class="vtag">V4 ·</span> Top 10 provinces &amp; cities by population</h2>
+    <p class="sub">Ho Chi Minh City alone holds more people than the bottom 12 provinces combined. Terracotta bars are 2025 mergers; green bars kept their borders.</p>
+    <div id="chart-v4"></div>
+    <p class="src-line">Source: Resolution 202/2025/QH15 registered populations. These are administrative registrations, not NSO's resident population — see the reconciliation note.</p>
+  </section>
+
+  <section class="card" aria-labelledby="prov-title">
+    <h2 id="prov-title">All 34 provinces &amp; cities</h2>
+    <p class="sub">Search by English or Vietnamese name, filter by status or region, sort by population, area, density or name. Density is registered population ÷ land area.</p>
+    <div class="table-tools">
+      <label for="prov-search">Search</label>
+      <input type="search" id="prov-search" placeholder="e.g. Da Nang, Huế, Lam Dong…" aria-label="Search provinces">
+      <label for="prov-status">Status</label>
+      <select id="prov-status">
+        <option value="all">All 34</option>
+        <option value="merged">Merged (23)</option>
+        <option value="unchanged">Unchanged (11)</option>
+      </select>
+      <label for="prov-region">Region</label>
+      <select id="prov-region">
+        <option value="all">All regions</option>
+        <option>Northwest</option>
+        <option>Northeast</option>
+        <option>Red River Delta</option>
+        <option>North Central</option>
+        <option>South Central Coast &amp; Central Highlands</option>
+        <option>Southeast</option>
+        <option>Mekong Delta</option>
+      </select>
+      <label for="prov-sort">Sort</label>
+      <select id="prov-sort">
+        <option value="pop-desc">Population ↓</option>
+        <option value="pop-asc">Population ↑</option>
+        <option value="area-desc">Area ↓</option>
+        <option value="density-desc">Density ↓</option>
+        <option value="name-asc">Name A–Z</option>
+      </select>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn" data-export="provinces-csv">Download CSV</button>
+      <button type="button" class="btn ghost" data-export="provinces-json">Download JSON</button>
+    </div>
+    <div class="table-scroll" style="margin-top:14px">
+      <table class="data">
+        <thead><tr><th class="r">#</th><th>Province / City</th><th>Region</th><th class="r">Area km²</th><th class="r">Population</th><th class="r">Density /km²</th><th>Status</th><th>Formed from</th></tr></thead>
+        <tbody id="province-rows"></tbody>
+      </table>
+    </div>
+    <p id="prov-count"></p>
+    <p class="src-line">Source: Resolution 202/2025/QH15. The 34 populations sum to 113,572,156 registered persons — 11.27 million above NSO's 2025 resident population of 102.3 million. The gap is a difference of measure (registration vs residence), not an error in either figure.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>VIETPULSE — Viet Nam National Statistics Atlas, 2025 Annual Edition.</strong> An independent atlas built from public official statistics. It is not affiliated with the National Statistics Office of Viet Nam, the World Bank, or the United Nations.</p>
+    <p>Sources: NSO (nso.gov.vn) · World Bank WDI · UN World Population Prospects 2024 · Resolution 202/2025/QH15. See <a href="./sources.html">Data &amp; Sources</a> for the full list and method notes. Figures marked (p) are preliminary and may be revised.</p>
+  </div>
+</footer>
+
+<script src="./data.js"></script>
+<script src="./charts.js"></script>
+<script src="./map.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>VIETPULSE — Viet Nam National Statistics Atlas, 2025 Annual Edition</title>
+<meta name="description" content="Viet Nam's official statistics for 2025: GDP, growth, prices, trade, population and the new 34 provinces — from the National Statistics Office of Viet Nam and the World Bank.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="index">
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">VIET<em>PULSE</em></span>
+      <span class="brand-sub">Viet Nam National Statistics Atlas</span>
+      <span class="edition"><strong>2025 Annual Edition</strong><br>National Statistics Office of Viet Nam · World Bank WDI<br>Updated 26 November 2026</span>
+    </div>
+  </div>
+  <nav class="main" aria-label="Main navigation">
+    <ul>
+      <li><a href="./index.html" aria-current="page">Overview</a></li>
+      <li><a href="./economy.html">Economy</a></li>
+      <li><a href="./regions.html">Regions</a></li>
+      <li><a href="./people.html">People</a></li>
+      <li><a href="./sources.html">Data &amp; Sources</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Viet Nam in numbers — 2025</h1>
+    <p class="lede">One atlas, two honest series. The headline figures are the National Statistics Office of Viet Nam's own; flip the switch to see the World Bank's version of the same year, and read the reconciliation note before you quote a provincial total.</p>
+  </div>
+
+  <div class="toggle-row" role="group" aria-label="Choose the headline data series">
+    <span class="lbl">Headline series:</span>
+    <span class="seg">
+      <button type="button" data-source="nso" aria-pressed="true" class="active">NSO Official</button>
+      <button type="button" data-source="wb" aria-pressed="false">World Bank WDI</button>
+    </span>
+    <span id="source-label">NSO Official (National Statistics Office of Viet Nam)</span>
+  </div>
+
+  <div class="kpi-grid" id="kpi-grid" aria-live="polite"></div>
+  <p class="unemp-strip" id="unemp-strip"></p>
+
+  <div class="callout" role="note"><p id="recon-note"></p></div>
+
+  <section class="card" aria-labelledby="v1-title">
+    <h2 id="v1-title"><span class="vtag">V1 ·</span> Growth held, prices stayed calm</h2>
+    <p class="sub">Real GDP growth against CPI inflation, 2015–2025. The pandemic trough (2020–21) and the 2022 rebound are the story of the decade; 2025 is the joint-highest growth year of the series at 8.02%.</p>
+    <div id="chart-v1"></div>
+    <p class="src-line">Source: NSO real GDP growth; CPI annual average, NSO / World Bank WDI (FP.CPI.TOTL.ZG). 2022 first published as 8.02%, later revised to 8.12%. 2025 growth is a preliminary estimate. Hover or tap any bar or point for the exact value.</p>
+  </section>
+
+  <section class="card" aria-labelledby="v5-title">
+    <h2 id="v5-title"><span class="vtag">V5 ·</span> A $500-billion economy crosses $5,000 per person</h2>
+    <p class="sub">Nominal GDP in current US dollars and GDP per capita, 2015–2025. The economy more than doubled in ten years; 2025 is the first year GDP per capita passes $5,000 on the World Bank series.</p>
+    <div id="chart-v5"></div>
+    <p class="src-line">Source: World Bank WDI, GDP nominal (NY.GDP.MKTP.CD); GDP per capita is GDP divided by UN World Population Prospects 2024 population. NSO's own 2025 figures are $514.0bn and $5,026 per capita (VND 12,847.6 trillion) — switch the headline series above to see them.</p>
+  </section>
+
+  <div class="two-col">
+    <section class="card" aria-labelledby="brief-title">
+      <h2 id="brief-title">2025 in brief</h2>
+      <ul>
+        <li><strong>Growth 8.02%</strong> — the fastest since the 2022 rebound, on construction (+9.62%) and a strong export year.</li>
+        <li><strong>Trade surplus $20.03bn</strong> on merchandise exports of $475.04bn; realised FDI hit a five-year high of $27.62bn.</li>
+        <li><strong>63 provinces became 34</strong> on 1 July 2025 (Resolution 202/2025/QH15). Ho Chi Minh City is now 14.00 million people.</li>
+        <li><strong>Fertility fell to 1.66</strong> on NSO civil registration — well below replacement level 2.1, and below the UN estimate of 1.88.</li>
+        <li><strong>Unemployment 2.22%</strong> on NSO's working-age measure; the ILO-modelled figure is 1.52% — different definitions, both shown on <a href="./people.html">People</a>.</li>
+      </ul>
+    </section>
+    <section class="card" aria-labelledby="howto-title">
+      <h2 id="howto-title">How to use this atlas</h2>
+      <ul>
+        <li><strong>Economy</strong> — trade, the fastest-growing industries, and the full 2015–2025 national table, downloadable as CSV or JSON.</li>
+        <li><strong>Regions</strong> — a tile map of the 34 new provinces, the top 10 by population, and the complete provincial table with search, filter and sort.</li>
+        <li><strong>People</strong> — population, fertility and the unemployment-definition gap, with the demographic table.</li>
+        <li><strong>Data &amp; Sources</strong> — every source, the method notes, and the full dataset download.</li>
+        <li>Everything on this site works offline from its own files: no account, no tracking, no network requests.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>VIETPULSE — Viet Nam National Statistics Atlas, 2025 Annual Edition.</strong> An independent atlas built from public official statistics. It is not affiliated with the National Statistics Office of Viet Nam, the World Bank, or the United Nations.</p>
+    <p>Sources: NSO (nso.gov.vn) · World Bank WDI · UN World Population Prospects 2024 · Resolution 202/2025/QH15. See <a href="./sources.html">Data &amp; Sources</a> for the full list and method notes. Figures marked (p) are preliminary and may be revised.</p>
+  </div>
+</footer>
+
+<script src="./data.js"></script>
+<script src="./charts.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
